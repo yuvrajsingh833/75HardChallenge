@@ -1,0 +1,219 @@
+//Hard Day-4 (Accenture Coding Questions)-07/09/2024
+
+
+
+//Question-1 Sum of Number
+/* import java.util.*;
+
+class HelloWorld {
+    public static int calculateSum(int m,int n){
+        int noSum=0;
+        for(int i=m+1;i<n;i++){
+            if(i%3==0 && i%5==0){
+                noSum+=i;
+            }
+        }
+        return noSum;
+    }
+    
+    
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0){
+            int m=sc.nextInt();
+            int n=sc.nextInt();
+            System.out.println(calculateSum(m,n));
+        }
+    }
+}
+ */
+
+//Question-2 Sorted Array Sum;
+/* import java.util.*;
+class HelloWorld {
+    
+    public static int calcualteArrSum(int n,int arr[]){
+        ArrayList<Integer> arr1=new ArrayList<>();
+        ArrayList<Integer> arr2=new ArrayList<>();
+        
+        for(int i=0;i<n;i++){
+            if(i%2==0){
+                arr1.add(arr[i]);
+            }else{
+                arr2.add(arr[i]);
+            }
+        }
+        
+        Collections.sort(arr1);
+        Collections.sort(arr2);
+      
+        int a1=arr1.get(arr1.size()-2);
+        int a2=arr2.get(arr2.size()-2);
+        
+        return a1+a2;
+        
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0){
+            int n=sc.nextInt();
+            int arr[]=new int[n];
+            for(int i=0;i<n;i++){
+                arr[i]=sc.nextInt();
+            }
+            System.out.println(calcualteArrSum(n,arr));
+        }
+    }
+}
+ */
+
+ //Question-3 sum of table
+
+/* import java.util.*;
+class HelloWorld {
+    
+    public static int tableSum(int n){
+        int sum=0;
+        for(int i=1;i<=10;i++){
+            sum+=n*i;
+        }
+        return sum;
+    }
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int t=sc.nextInt();
+       while(t-->0){
+           int n=sc.nextInt();
+           System.out.println(tableSum(n));
+       }
+    }
+} */
+
+//Question-4 Intermediate Palindrome
+/* import java.util.*;
+class HelloWorld {
+    
+    public static int palindromePrint(int no){
+       int original=no;
+       int reversed=0;
+       while(no!=0){
+           int lastDigit=no%10;
+           reversed=reversed*10+lastDigit;
+           no/=10;
+       }
+       return reversed;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0){
+            int m=sc.nextInt();
+            int n=sc.nextInt();
+            for(int i=m;i<=n;i++){
+                if(i==palindromePrint(i)){
+                    System.out.println(i+" ");
+                }
+                
+            }
+        }
+    }
+} */
+
+
+//Question-5 sum of Distance between 3 points
+
+
+/* import java.util.*;
+class HelloWorld {
+    
+    public static float distanceSum(int x1,int x2,int x3,int y1,int y2,int y3){
+    
+        float X1=(float)Math.sqrt(Math.pow(x1-x2,2)+Math.pow(y1-y2,2));
+        float X2=(float)Math.sqrt(Math.pow(x2-x3,2)+Math.pow(y2-y2,2));
+        float X3=(float)Math.sqrt(Math.pow(x3-x1,2)+Math.pow(y3-y2,2));
+        return X1+X2+X3;
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0){
+            int x1=sc.nextInt();
+            int x2=sc.nextInt();
+            int x3=sc.nextInt();
+            int y1=sc.nextInt();
+            int y2=sc.nextInt();
+            int y3=sc.nextInt();
+            System.out.println(distanceSum(x1,x2,x3,y1,y2,y3));
+        }
+    }
+} */
+
+
+//Question 6 Find the maximum value and its index in the array
+
+/* import java.util.*;
+
+class HelloWorld {
+    public static void largestNo(int arr[],int n){
+        int largest=arr[0];
+        int index=0;
+        for(int i=1;i<n;i++){
+            if(arr[i]>largest){
+                largest=arr[i];
+                index=i;
+            }
+        }
+        System.out.println(largest);
+        System.out.println(index);
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int t=sc.nextInt();
+        while(t-->0){
+            int n=sc.nextInt();
+            int arr[]=new int[n];
+            for(int i=0;i<n;i++){
+                arr[i]=sc.nextInt();
+            }
+            largestNo(arr,n);
+        }
+    }
+} */
+
+
+/* import java.util.*;
+
+class HelloWorld {
+    public static String nBaseNotation(int num, int n) {
+        String res = "";
+        int quotient = num / n;
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(num % n);
+
+        while (quotient != 0) {
+            list.add(quotient % n);
+            quotient /= n;
+        }
+
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i) > 9) {
+                res = (char) (list.get(i) - 10 + 'A') + res;
+            } else {
+                res = list.get(i) + res;
+            }
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        while (t-- > 0) {
+            int n = sc.nextInt();
+            int num = sc.nextInt();
+            System.out.println(nBaseNotation(num, n));
+        }
+        sc.close();
+    } */
